@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink font-body;
+  }
+  ::selection {
+    @apply bg-clay text-paper;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Grid-locked page frame with generous gutters. */
+  .frame {
+    @apply mx-auto w-full max-w-grid px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Small clinical label — mono, wide-tracked, uppercase. */
+  .kicker {
+    @apply font-mono text-kicker uppercase text-clay;
+  }
+  .kicker-muted {
+    @apply font-mono text-kicker uppercase text-mist;
+  }
+
+  /* Hairline rules are the primary divider language. */
+  .rule {
+    @apply border-t border-hairline;
+  }
+
+  /* Sharp-edged clay button — the single primary action style. */
+  .btn-clay {
+    @apply inline-flex items-center gap-2 bg-clay px-6 py-3 font-mono text-[0.72rem]
+      uppercase tracking-label text-paper transition-colors duration-150
+      hover:bg-clay-deep focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-clay-deep;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border border-ink px-6 py-3 font-mono
+      text-[0.72rem] uppercase tracking-label text-ink transition-colors
+      duration-150 hover:bg-ink hover:text-paper;
+  }
+
+  .field {
+    @apply w-full border border-hairline bg-panel px-4 py-3 font-body text-sm
+      text-ink placeholder:text-mist focus:border-clay focus:outline-none;
+  }
+  .field-label {
+    @apply mb-2 block font-mono text-[0.66rem] uppercase tracking-label text-graphite;
+  }
+}
+
+/* Near-zero motion: one restrained reveal, disabled for reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .settle {
+    animation: settle 0.5s ease-out both;
+  }
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
