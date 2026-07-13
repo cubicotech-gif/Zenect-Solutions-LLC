@@ -23,7 +23,7 @@ function Wordmark() {
       <img
         src={entry.url}
         alt={brand.legalName}
-        className="h-16 w-auto sm:h-20 lg:h-24"
+        className="h-20 w-auto sm:h-28 lg:h-40"
       />
     );
   }
@@ -74,7 +74,7 @@ export default function TopBar() {
 
       {/* Main bar */}
       <div className="border-b border-hairline bg-white">
-        <div className="frame flex h-24 items-center gap-5 sm:h-28 lg:h-32">
+        <div className="frame flex h-28 items-center gap-5 sm:h-36 lg:h-48">
           <Link
             href="/"
             aria-label={`${brand.legalName} home`}
