@@ -4,9 +4,9 @@ import SlotFrame from "@/components/media/SlotFrame";
 import { brand } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "Practice",
+  title: "Company",
   description:
-    "How Zenect Solutions works — a Columbus medical-equipment supplier built on stocked inventory, in-person fitting, and one specialist per account.",
+    "How Zenect Solutions works — a Denver medical-equipment supplier built on stocked inventory, in-person fitting, and one specialist per account.",
 };
 
 const values = [
@@ -32,7 +32,7 @@ const timeline = [
   {
     year: "2011",
     head: "A single storeroom",
-    body: "Started as a two-person operation supplying home wheelchairs to Franklin County.",
+    body: "Started as a two-person operation supplying home wheelchairs across the Denver metro.",
   },
   {
     year: "2015",
@@ -54,14 +54,17 @@ const timeline = [
 export default function AboutPage() {
   return (
     <>
-      <header className="border-b border-hairline">
-        <div className="frame grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="py-16 lg:py-24 lg:pr-16">
-            <p className="kicker">Our practice</p>
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl">
+      {/* Hero header */}
+      <header className="bg-brand-sweep">
+        <div className="frame grid items-center gap-10 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:py-24">
+          <div className="text-white">
+            <p className="font-display text-xs font-semibold uppercase tracking-label text-teal-soft">
+              Our company
+            </p>
+            <h1 className="mt-4 font-display text-4xl font-bold leading-[1.06] tracking-tight sm:text-5xl">
               A supply company that acts like a care team.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-graphite">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80">
               {brand.legalName} has spent {2025 - brand.founded} years doing one
               thing well: putting reliable equipment in the hands of the people
               who depend on it, then staying reachable when something needs an
@@ -69,33 +72,35 @@ export default function AboutPage() {
               with a fitting bay and a phone that a person answers.
             </p>
           </div>
-          <div className="relative min-h-[300px] border-hairline lg:border-l">
-            <SlotFrame
-              slot="story-still"
-              alt="Inside the Zenect storeroom"
-              label="About Portrait"
-              className="h-full w-full"
-            />
+          <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lift">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-panel">
+              <SlotFrame
+                slot="story-still"
+                alt="Inside the Zenect storeroom"
+                label="About Portrait"
+                className="h-full w-full"
+              />
+            </div>
           </div>
         </div>
       </header>
 
       {/* Values */}
-      <section className="frame py-20 lg:py-28">
+      <section className="frame py-16 lg:py-24">
         <p className="kicker">What we hold to</p>
-        <h2 className="mt-5 max-w-lg font-display text-3xl font-semibold text-ink sm:text-4xl">
+        <h2 className="mt-3 max-w-lg font-display text-3xl font-bold text-navy sm:text-4xl">
           Four commitments, kept in writing.
         </h2>
-        <div className="mt-14 grid gap-px border border-hairline bg-hairline sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {values.map((v, i) => (
-            <div key={v.tag} className="bg-paper p-8 lg:p-10">
-              <span className="font-mono text-sm text-clay">
+            <div key={v.tag} className="card p-7 lg:p-8">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-sky font-display text-sm font-bold text-brand">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 font-display text-lg font-medium text-ink">
+              <h3 className="mt-4 font-display text-lg font-semibold text-navy">
                 {v.tag}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-graphite">
+              <p className="mt-2 text-sm leading-relaxed text-graphite">
                 {v.body}
               </p>
             </div>
@@ -104,24 +109,26 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="border-t border-hairline bg-panel">
-        <div className="frame py-20 lg:py-28">
+      <section className="bg-panel">
+        <div className="frame py-16 lg:py-24">
           <p className="kicker">Track record</p>
-          <h2 className="mt-5 font-display text-3xl font-semibold text-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-bold text-navy sm:text-4xl">
             Fourteen years, one model.
           </h2>
-          <div className="mt-14 border-t border-hairline">
+          <div className="mt-10 space-y-4">
             {timeline.map((t) => (
               <div
                 key={t.year}
-                className="grid gap-4 border-b border-hairline py-8 sm:grid-cols-[140px_1fr]"
+                className="card grid gap-4 p-6 sm:grid-cols-[140px_1fr] lg:p-7"
               >
-                <p className="font-mono text-lg text-clay">{t.year}</p>
+                <p className="font-display text-2xl font-bold text-teal-deep">
+                  {t.year}
+                </p>
                 <div>
-                  <h3 className="font-display text-lg font-medium text-ink">
+                  <h3 className="font-display text-lg font-semibold text-navy">
                     {t.head}
                   </h3>
-                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-graphite">
+                  <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-graphite">
                     {t.body}
                   </p>
                 </div>
@@ -131,12 +138,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ink">
-        <div className="frame flex flex-col items-start justify-between gap-6 py-14 lg:flex-row lg:items-center">
-          <h2 className="max-w-xl font-display text-2xl font-semibold text-paper">
+      <section className="bg-brand-sweep">
+        <div className="frame flex flex-col items-start justify-between gap-6 py-12 lg:flex-row lg:items-center">
+          <h2 className="max-w-xl font-display text-2xl font-bold text-white">
             Work with a supplier that answers. Let&rsquo;s talk equipment.
           </h2>
-          <Link href="/contact" className="btn-clay">
+          <Link href="/contact" className="btn-gold">
             Get in touch
           </Link>
         </div>

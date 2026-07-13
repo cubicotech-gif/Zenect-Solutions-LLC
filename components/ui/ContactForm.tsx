@@ -44,8 +44,8 @@ export default function ContactForm() {
 
   if (state === "done") {
     return (
-      <div className="border border-clay bg-clay-wash/60 p-8">
-        <div className="flex items-center gap-3 text-clay-deep">
+      <div className="border border-teal bg-sky/60 p-8">
+        <div className="flex items-center gap-3 text-teal-deep">
           <Check size={20} />
           <p className="font-display text-lg font-medium">Message received.</p>
         </div>
@@ -134,13 +134,13 @@ export default function ContactForm() {
       </div>
 
       {state === "error" && (
-        <p className="border border-clay-deep bg-clay-wash px-4 py-3 text-sm text-clay-deep">
+        <p className="border border-teal-deep bg-sky px-4 py-3 text-sm text-teal-deep">
           We couldn&rsquo;t send that. Check the connection and try again, or
           email us directly.
         </p>
       )}
 
-      <button type="submit" className="btn-clay" disabled={state === "sending"}>
+      <button type="submit" className="btn-primary" disabled={state === "sending"}>
         {state === "sending" ? (
           <>
             <Loader2 size={14} className="animate-spin" /> Sending

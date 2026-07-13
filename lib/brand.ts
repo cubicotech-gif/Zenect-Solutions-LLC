@@ -9,14 +9,14 @@ export const brand = {
   positioning:
     "A medical-equipment supplier for clinics, care teams, and households that need gear to work the first time, every time.",
   domain: "zenectsolutionsllc.com",
-  phone: "+1 (614) 555-0142",
-  phoneHref: "+16145550142",
+  phone: "(512) 872-1111",
+  phoneHref: "+15128721111",
   email: "hello@zenectsolutionsllc.com",
   address: {
-    line1: "218 Marconi Boulevard, Suite 4",
-    city: "Columbus",
-    state: "OH",
-    zip: "43215",
+    line1: "1500 N Grant Street",
+    city: "Denver",
+    state: "CO",
+    zip: "80203",
   },
   hours: [
     { days: "Monday – Thursday", time: "8:00a – 6:00p" },

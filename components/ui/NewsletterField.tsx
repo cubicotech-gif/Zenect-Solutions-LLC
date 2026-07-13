@@ -39,14 +39,17 @@ export default function NewsletterField() {
 
   if (state === "done") {
     return (
-      <p className="flex items-center gap-2 font-mono text-[0.72rem] uppercase tracking-label text-clay">
-        <Check size={14} /> You&rsquo;re on the list
+      <p className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2.5 text-sm font-semibold text-teal-soft">
+        <Check size={16} /> You&rsquo;re on the list.
       </p>
     );
   }
 
   return (
-    <form onSubmit={submit} className="flex items-stretch border border-hairline">
+    <form
+      onSubmit={submit}
+      className="flex items-stretch gap-2 rounded-full bg-white p-1.5 shadow-card"
+    >
       <input
         type="email"
         required
@@ -54,15 +57,14 @@ export default function NewsletterField() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@email.com"
         aria-label="Email address"
-        className="w-full bg-panel px-3 py-2 text-sm text-ink placeholder:text-mist focus:outline-none"
+        className="w-full rounded-full bg-transparent px-4 text-sm text-ink placeholder:text-mist focus:outline-none"
       />
       <button
         type="submit"
         disabled={state === "sending"}
-        aria-label="Subscribe"
-        className="flex items-center bg-ink px-3 text-paper transition-colors hover:bg-clay disabled:opacity-60"
+        className="flex shrink-0 items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 font-display text-sm font-semibold text-navy transition-colors hover:bg-gold-deep disabled:opacity-60"
       >
-        <ArrowRight size={16} />
+        Subscribe <ArrowRight size={15} />
       </button>
       {state === "error" && (
         <span className="sr-only">Something went wrong.</span>

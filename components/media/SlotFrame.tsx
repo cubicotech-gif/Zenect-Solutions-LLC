@@ -30,11 +30,11 @@ export default function SlotFrame({
   if (!entry) {
     return (
       <span
-        className={`flex items-center justify-center bg-clay-wash/70 ${className}`}
+        className={`flex items-center justify-center bg-sky ${className}`}
         aria-label={`${alt} (image not set)`}
         role="img"
       >
-        <span className="px-4 text-center font-mono text-[0.62rem] uppercase tracking-label text-clay-deep/70">
+        <span className="px-4 text-center font-display text-[0.66rem] font-semibold uppercase tracking-label text-brand/60">
           {label || alt}
         </span>
       </span>
