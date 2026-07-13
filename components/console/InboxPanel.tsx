@@ -8,9 +8,9 @@ type Status = "new" | "read" | "replied" | "archived";
 const FLOW: Status[] = ["new", "read", "replied", "archived"];
 
 const STATUS_STYLE: Record<Status, string> = {
-  new: "bg-clay text-paper",
+  new: "bg-teal text-paper",
   read: "bg-ink text-paper",
-  replied: "border border-clay text-clay-deep",
+  replied: "border border-teal text-teal-deep",
   archived: "border border-hairline text-mist",
 };
 
@@ -119,7 +119,7 @@ export default function InboxPanel() {
         </div>
         <button
           onClick={() => load()}
-          className="inline-flex items-center gap-2 font-mono text-[0.66rem] uppercase tracking-label text-graphite hover:text-clay"
+          className="inline-flex items-center gap-2 font-mono text-[0.66rem] uppercase tracking-label text-graphite hover:text-teal"
         >
           <RefreshCw size={13} className={loading ? "animate-spin" : ""} />
           Refresh
@@ -150,7 +150,7 @@ export default function InboxPanel() {
             <Loader2 size={16} className="animate-spin" /> Loading…
           </div>
         ) : error ? (
-          <p className="border border-clay-deep bg-clay-wash px-4 py-3 text-sm text-clay-deep">
+          <p className="border border-teal-deep bg-sky px-4 py-3 text-sm text-teal-deep">
             {error}
           </p>
         ) : visible.length === 0 ? (
@@ -183,14 +183,14 @@ export default function InboxPanel() {
                     <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-graphite">
                       <a
                         href={`mailto:${row.email}`}
-                        className="inline-flex items-center gap-1.5 hover:text-clay"
+                        className="inline-flex items-center gap-1.5 hover:text-teal"
                       >
                         <Mail size={12} /> {row.email}
                       </a>
                       {row.phone && (
                         <a
                           href={`tel:${row.phone}`}
-                          className="inline-flex items-center gap-1.5 hover:text-clay"
+                          className="inline-flex items-center gap-1.5 hover:text-teal"
                         >
                           <Phone size={12} /> {row.phone}
                         </a>
@@ -233,7 +233,7 @@ export default function InboxPanel() {
                         className={`px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-label transition-colors ${
                           row.status === s
                             ? "cursor-default bg-ink text-paper"
-                            : "border border-hairline text-graphite hover:border-clay hover:text-clay"
+                            : "border border-hairline text-graphite hover:border-teal hover:text-teal"
                         }`}
                       >
                         {s}
@@ -264,7 +264,7 @@ function FilterChip({
       onClick={onClick}
       className={`px-3 py-1.5 font-mono text-[0.6rem] uppercase tracking-label transition-colors ${
         active
-          ? "bg-clay text-paper"
+          ? "bg-teal text-paper"
           : "border border-hairline text-graphite hover:text-ink"
       }`}
     >

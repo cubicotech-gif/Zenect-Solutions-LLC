@@ -92,14 +92,14 @@ function SlotCard({ slot }: { slot: MediaSlot }) {
           slot: {slot.key}
         </p>
 
-        {note && <p className="mt-2 text-xs text-clay-deep">{note}</p>}
+        {note && <p className="mt-2 text-xs text-teal-deep">{note}</p>}
 
         <div className="mt-auto flex gap-2 pt-4">
           <button
             type="button"
             onClick={() => inputRef.current?.click()}
             disabled={busy !== "idle"}
-            className="flex flex-1 items-center justify-center gap-2 bg-ink px-3 py-2 font-mono text-[0.62rem] uppercase tracking-label text-paper transition-colors hover:bg-clay disabled:opacity-60"
+            className="flex flex-1 items-center justify-center gap-2 bg-ink px-3 py-2 font-mono text-[0.62rem] uppercase tracking-label text-paper transition-colors hover:bg-teal disabled:opacity-60"
           >
             {busy === "up" ? (
               <Loader2 size={13} className="animate-spin" />
@@ -114,7 +114,7 @@ function SlotCard({ slot }: { slot: MediaSlot }) {
               onClick={onDelete}
               disabled={busy !== "idle"}
               aria-label={`Delete ${slot.label}`}
-              className="flex items-center justify-center border border-hairline px-3 py-2 text-graphite transition-colors hover:border-clay-deep hover:text-clay-deep disabled:opacity-60"
+              className="flex items-center justify-center border border-hairline px-3 py-2 text-graphite transition-colors hover:border-teal-deep hover:text-teal-deep disabled:opacity-60"
             >
               {busy === "del" ? (
                 <Loader2 size={13} className="animate-spin" />

@@ -15,7 +15,7 @@
     @apply bg-paper text-ink font-body;
   }
   ::selection {
-    @apply bg-clay text-paper;
+    @apply bg-teal text-white;
   }
   h1,
   h2,
@@ -26,56 +26,83 @@
 }
 
 @layer components {
-  /* Grid-locked page frame with generous gutters. */
+  /* Centered content grid with comfortable gutters. */
   .frame {
-    @apply mx-auto w-full max-w-grid px-6 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-grid px-5 sm:px-8 lg:px-10;
   }
 
-  /* Small clinical label — mono, wide-tracked, uppercase. */
+  /* Small brand label — Poppins, tracked, teal. */
   .kicker {
-    @apply font-mono text-kicker uppercase text-clay;
+    @apply font-display text-kicker font-semibold uppercase text-teal-deep;
   }
   .kicker-muted {
-    @apply font-mono text-kicker uppercase text-mist;
+    @apply font-display text-kicker font-semibold uppercase text-mist;
   }
 
-  /* Hairline rules are the primary divider language. */
   .rule {
     @apply border-t border-hairline;
   }
 
-  /* Sharp-edged clay button — the single primary action style. */
-  .btn-clay {
-    @apply inline-flex items-center gap-2 bg-clay px-6 py-3 font-mono text-[0.72rem]
-      uppercase tracking-label text-paper transition-colors duration-150
-      hover:bg-clay-deep focus-visible:outline focus-visible:outline-2
-      focus-visible:outline-offset-2 focus-visible:outline-clay-deep;
+  /* Primary action — royal-blue pill with a soft lift. */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7
+      py-3 font-display text-sm font-semibold text-white shadow-pill transition-colors
+      duration-150 hover:bg-brand-deep focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand-deep;
   }
+
+  /* Highlight action — warm gold pill on dark surfaces. */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7
+      py-3 font-display text-sm font-semibold text-navy shadow-pill transition-colors
+      duration-150 hover:bg-gold-deep;
+  }
+
+  /* Outline action. */
   .btn-ghost {
-    @apply inline-flex items-center gap-2 border border-ink px-6 py-3 font-mono
-      text-[0.72rem] uppercase tracking-label text-ink transition-colors
-      duration-150 hover:bg-ink hover:text-paper;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand
+      px-7 py-3 font-display text-sm font-semibold text-brand transition-colors
+      duration-150 hover:bg-brand hover:text-white;
+  }
+
+  /* Outline action tuned for dark/blue backgrounds. */
+  .btn-onblue {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/40
+      px-7 py-3 font-display text-sm font-semibold text-white transition-colors
+      duration-150 hover:bg-white hover:text-navy;
+  }
+
+  /* Light quick-link pill used in the sub-navigation band. */
+  .pill-link {
+    @apply inline-flex items-center gap-2 rounded-full border border-skyline bg-white
+      px-4 py-1.5 text-sm font-medium text-navy transition-colors hover:border-brand
+      hover:text-brand;
+  }
+
+  .card {
+    @apply rounded-xl border border-hairline bg-white shadow-card;
   }
 
   .field {
-    @apply w-full border border-hairline bg-panel px-4 py-3 font-body text-sm
-      text-ink placeholder:text-mist focus:border-clay focus:outline-none;
+    @apply w-full rounded-lg border border-hairline bg-white px-4 py-3 font-body text-sm
+      text-ink placeholder:text-mist focus:border-brand focus:outline-none
+      focus:ring-2 focus:ring-brand/20;
   }
   .field-label {
-    @apply mb-2 block font-mono text-[0.66rem] uppercase tracking-label text-graphite;
+    @apply mb-1.5 block font-display text-[0.72rem] font-semibold uppercase tracking-label text-graphite;
   }
 }
 
-/* Near-zero motion: one restrained reveal, disabled for reduced-motion. */
+/* Gentle motion: soft fades, disabled for reduced-motion. */
 @media (prefers-reduced-motion: no-preference) {
   .settle {
-    animation: settle 0.5s ease-out both;
+    animation: settle 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }
 @keyframes settle {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

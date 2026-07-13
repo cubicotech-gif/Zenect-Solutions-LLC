@@ -53,8 +53,8 @@ export default function QuoteForm() {
 
   if (state === "done") {
     return (
-      <div className="border border-clay bg-clay-wash/60 p-8">
-        <div className="flex items-center gap-3 text-clay-deep">
+      <div className="border border-teal bg-sky/60 p-8">
+        <div className="flex items-center gap-3 text-teal-deep">
           <Check size={20} />
           <p className="font-display text-lg font-medium">Quote request in.</p>
         </div>
@@ -162,12 +162,12 @@ export default function QuoteForm() {
       </div>
 
       {state === "error" && (
-        <p className="border border-clay-deep bg-clay-wash px-4 py-3 text-sm text-clay-deep">
+        <p className="border border-teal-deep bg-sky px-4 py-3 text-sm text-teal-deep">
           Couldn&rsquo;t submit the request. Please retry or call us.
         </p>
       )}
 
-      <button type="submit" className="btn-clay" disabled={state === "sending"}>
+      <button type="submit" className="btn-primary" disabled={state === "sending"}>
         {state === "sending" ? (
           <>
             <Loader2 size={14} className="animate-spin" /> Submitting

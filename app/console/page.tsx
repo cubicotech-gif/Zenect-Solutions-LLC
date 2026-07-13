@@ -55,12 +55,12 @@ export default function ConsolePage() {
             <span className="font-display text-xl font-semibold tracking-wordmark">
               {brand.shortName}
             </span>
-            <span className="font-mono text-[0.6rem] uppercase tracking-label text-clay">
+            <span className="font-mono text-[0.6rem] uppercase tracking-label text-teal">
               Console
             </span>
           </div>
           <div className="border border-hairline bg-panel p-8">
-            <Lock size={18} className="text-clay" />
+            <Lock size={18} className="text-teal" />
             <h1 className="mt-4 font-display text-xl font-semibold text-ink">
               Restricted
             </h1>
@@ -68,7 +68,7 @@ export default function ConsolePage() {
               Enter the console passphrase to manage media and submissions.
             </p>
             {!GATE && (
-              <p className="mt-4 border border-clay-deep bg-clay-wash px-3 py-2 text-xs text-clay-deep">
+              <p className="mt-4 border border-teal-deep bg-sky px-3 py-2 text-xs text-teal-deep">
                 No passphrase is configured. Set NEXT_PUBLIC_CONSOLE_KEY.
               </p>
             )}
@@ -85,18 +85,18 @@ export default function ConsolePage() {
                 className="field"
               />
               {err && (
-                <p className="text-xs text-clay-deep">
+                <p className="text-xs text-teal-deep">
                   That passphrase didn&rsquo;t match.
                 </p>
               )}
-              <button type="submit" className="btn-clay w-full justify-center">
+              <button type="submit" className="btn-primary w-full justify-center">
                 Unlock
               </button>
             </form>
           </div>
           <Link
             href="/"
-            className="mt-6 inline-flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-label text-mist hover:text-clay"
+            className="mt-6 inline-flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-label text-mist hover:text-teal"
           >
             <ArrowLeft size={12} /> Back to site
           </Link>
@@ -114,20 +114,20 @@ export default function ConsolePage() {
             <span className="font-display text-lg font-semibold tracking-wordmark">
               {brand.shortName}
             </span>
-            <span className="font-mono text-[0.6rem] uppercase tracking-label text-clay">
+            <span className="font-mono text-[0.6rem] uppercase tracking-label text-teal">
               Console
             </span>
           </div>
           <div className="flex items-center gap-6">
             <Link
               href="/"
-              className="hidden font-mono text-[0.66rem] uppercase tracking-label text-mist hover:text-clay sm:inline"
+              className="hidden font-mono text-[0.66rem] uppercase tracking-label text-mist hover:text-teal sm:inline"
             >
               View site
             </Link>
             <button
               onClick={lock}
-              className="inline-flex items-center gap-2 font-mono text-[0.66rem] uppercase tracking-label text-graphite hover:text-clay-deep"
+              className="inline-flex items-center gap-2 font-mono text-[0.66rem] uppercase tracking-label text-graphite hover:text-teal-deep"
             >
               <LogOut size={13} /> Lock
             </button>
@@ -137,7 +137,7 @@ export default function ConsolePage() {
 
       <div className="frame py-10">
         {!storeConfigured() && (
-          <p className="mb-8 border border-clay-deep bg-clay-wash px-4 py-3 text-sm text-clay-deep">
+          <p className="mb-8 border border-teal-deep bg-sky px-4 py-3 text-sm text-teal-deep">
             Supabase env vars are not set — uploads and the inbox won&rsquo;t work
             until NEXT_PUBLIC_STORE_URL and NEXT_PUBLIC_STORE_KEY are configured.
           </p>
@@ -181,7 +181,7 @@ function TabButton({
       onClick={onClick}
       className={`relative -mb-px flex items-center gap-2 px-5 py-3 font-mono text-[0.7rem] uppercase tracking-label transition-colors ${
         active
-          ? "border-b-2 border-clay text-ink"
+          ? "border-b-2 border-teal text-ink"
           : "border-b-2 border-transparent text-mist hover:text-ink"
       }`}
     >
