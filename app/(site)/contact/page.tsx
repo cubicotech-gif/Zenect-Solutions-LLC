@@ -116,7 +116,7 @@ export default function ContactPage() {
       </div>
 
       {/* Quote request */}
-      <section id="quote" className="scroll-mt-40 bg-panel">
+      <section id="quote" className="scroll-mt-56 bg-panel">
         <div className="frame py-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
