@@ -44,7 +44,7 @@ export default function CatalogPage() {
         <section
           key={division.slug}
           id={division.slug}
-          className={`scroll-mt-40 ${di % 2 === 1 ? "bg-panel" : "bg-white"}`}
+          className={`scroll-mt-56 ${di % 2 === 1 ? "bg-panel" : "bg-white"}`}
         >
           <div className="frame py-14 lg:py-20">
             <div className="flex items-baseline gap-4">
@@ -66,7 +66,7 @@ export default function CatalogPage() {
                 <article
                   key={unit.slug}
                   id={unit.slug}
-                  className="card flex scroll-mt-40 flex-col overflow-hidden"
+                  className="card flex scroll-mt-56 flex-col overflow-hidden"
                 >
                   <div className="relative aspect-[5/3] border-b border-hairline bg-sky">
                     <SlotFrame

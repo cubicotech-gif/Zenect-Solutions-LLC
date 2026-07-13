@@ -19,7 +19,13 @@ function Wordmark() {
   const { entry } = useSlot("wordmark");
   if (entry) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={entry.url} alt={brand.legalName} className="h-9 w-auto" />;
+    return (
+      <img
+        src={entry.url}
+        alt={brand.legalName}
+        className="h-16 w-auto sm:h-20 lg:h-24"
+      />
+    );
   }
   return (
     <span className="flex flex-col leading-none">
@@ -68,7 +74,7 @@ export default function TopBar() {
 
       {/* Main bar */}
       <div className="border-b border-hairline bg-white">
-        <div className="frame flex h-20 items-center gap-6">
+        <div className="frame flex h-24 items-center gap-5 sm:h-28 lg:h-32">
           <Link
             href="/"
             aria-label={`${brand.legalName} home`}
